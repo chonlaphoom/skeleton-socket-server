@@ -4,5 +4,5 @@ monolith
 
 # serve
 
-- '/' serve app page
-- '/ws' GET method which will instantiate new client instance
+- `/` GET method : serve app page
+- `/ws` GET method : init new client instance
