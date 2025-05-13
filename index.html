@@ -21,7 +21,7 @@
 
 <body>
 	<h3>connect to ws</h3>
-	<button>connect</button>
+	<button id="dis" style="color: red;">disconnect</button>
 
 	<input type="text" id="message" placeholder="Type a message"></input>
 	<button id="send">Send</button>
@@ -49,6 +49,13 @@
 			const input = document.getElementById("message");
 			ws.send(input.value);
 			input.value = "";
+		});
+
+		document.getElementById("dis").addEventListener("click", () => {
+			ws.close();
+			const newMessage = document.createElement("div");
+			newMessage.textContent = `disconnect`;
+			messages.appendChild(newMessage);
 		});
 	</script>
 </body>
