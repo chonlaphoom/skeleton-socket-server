@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style type="text/css">
+		body {
+			background: grey
+		}
+
+		h3 {
+			color: wheat
+		}
+
+		.white {
+			color: wheat;
+		}
+	</style>
+
+	<title>Skeleton</title>
+</head>
+
+<body>
+	<h3>connect to ws</h3>
+	<button>connect</button>
+
+	<input type="text" id="message" placeholder="Type a message"></input>
+	<button id="send">Send</button>
+	<div id="messages"></div>
+
+	<script>
+		const ws = new WebSocket("ws://localhost:8081");
+
+		ws.onopen = () => {
+			console.log("Connected to server");
+		};
+
+		ws.onmessage = (event) => {
+			const messages = document.getElementById("messages");
+			const newMessage = document.createElement("div");
+			newMessage.textContent = `Server: ${event.data}`;
+			messages.appendChild(newMessage);
+		};
+
+		ws.onclose = () => {
+			console.log("Disconnected from server");
+		};
+
+		document.getElementById("send").addEventListener("click", () => {
+			const input = document.getElementById("message");
+			ws.send(input.value);
+			input.value = "";
+		});
+	</script>
+</body>
+
+</html>

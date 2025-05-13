@@ -1,0 +1,16 @@
+{
+  "name": "skeleton-socket-server",
+  "version": "1.0.0",
+  "description": "monolith",
+  "main": "ws.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+	"type": "module",
+  "license": "MIT",
+  "dependencies": {
+    "ws": "^8.18.2"
+  }
+}
