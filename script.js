@@ -20,3 +20,10 @@ document.getElementById("send").addEventListener("click", () => {
   ws.send(input.value);
   input.value = "";
 });
+
+document.getElementById("dis").addEventListener("click", () => {
+  ws.close();
+  const newMessage = document.createElement("div");
+  newMessage.textContent = `disconnect`;
+  messages.appendChild(newMessage);
+});

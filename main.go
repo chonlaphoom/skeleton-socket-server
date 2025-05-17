@@ -17,7 +17,7 @@ func serveApp(w http.ResponseWriter, r *http.Request) {
 func main() {
 	flag.Parse()
 
-	fmt.Printf("web serve %s", *addr)
+	fmt.Printf("static serve at %s", *addr)
 	http.HandleFunc("/", serveApp)
 
 	err := http.ListenAndServe(*addr, nil)
