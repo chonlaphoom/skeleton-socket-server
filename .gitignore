@@ -21,6 +21,9 @@
 go.work
 go.work.sum
 
+# built file
+out
+
 # env file
 .env
 
